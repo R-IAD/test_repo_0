@@ -152,7 +152,29 @@ void DIO_vSetPortVal(u08 A_u08PortNo , u08 A_u08Val)
 
 }
 }
-u08  DIO_u08GetPortVal(u08 A_u08PortNo)
+/*u08  DIO_u08GetPortVal(u08 A_u08PortNo)
 {
 
+}*/
+
+void DIO_vToglPinVal(u08 A_u08PortNo , u08 A_u08PinNo)
+{
+	switch(A_u08PortNo)
+	{
+	case DIO_PORTA :
+		TOG_BIT(PORTA,A_u08PinNo);
+		break;
+	case DIO_PORTB :
+		TOG_BIT(PORTB,A_u08PinNo);
+		break;
+	case DIO_PORTC :
+		TOG_BIT(PORTC,A_u08PinNo);
+		break;
+	case DIO_PORTD :
+		TOG_BIT(PORTD,A_u08PinNo);
+		break;
+	}
+
+
 }
+
